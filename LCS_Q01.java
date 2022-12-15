@@ -115,9 +115,16 @@ public static void main(String[] args) {
 	
             System.out.println("\nInforme o primeiro número: ");
             numeroA = entrance.nextInt();
+            if (numeroA <= 0) {
+                System.out.print("Valor inválido para essa operação, insira outro valor que seja maior que 0: ");
+                numeroA = entrance.nextInt();
+            }
             System.out.println("Informe o segundo número: ");
             numeroB = entrance.nextInt();
-        
+            if (numeroB <= 0) {
+                System.out.print("Valor inválido para essa operação, insira outro valor que seja maior que 0: "); 
+                numeroB = entrance.nextInt();
+            }    
             int restoDivisao = numeroA;
         
             while(restoDivisao - numeroB >= 0){
