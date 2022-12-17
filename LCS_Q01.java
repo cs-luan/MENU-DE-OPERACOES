@@ -111,32 +111,39 @@ public static void main(String[] args) {
         if (opcao == 4) {
             System.out.print("Opção DIVISÃO DE UM NÚMERO POR OUTRO selecionada! ");
             Scanner entrance = new Scanner(System.in);
-            int numeroA, numeroB;
-	
-            System.out.println("\nInforme o primeiro número: ");
-            numeroA = entrance.nextInt();
-            if (numeroA <= 0) {
-                System.out.print("Valor inválido para essa operação, insira outro valor que seja maior que 0: ");
-                numeroA = entrance.nextInt();
+            
+            int dividendo, divisor;
+            int quociente = 0;
+
+            System.out.print("\nInsira o valor do dividendo: ");
+            dividendo = entrance.nextInt();
+            System.out.print("Insira o valor do divisor: ");
+            divisor = entrance.nextInt();
+
+            while (dividendo >= divisor) {
+            dividendo -= divisor;
+            quociente++;
             }
-            System.out.println("Informe o segundo número: ");
-            numeroB = entrance.nextInt();
-            if (numeroB <= 0) {
-                System.out.print("Valor inválido para essa operação, insira outro valor que seja maior que 0: "); 
-                numeroB = entrance.nextInt();
-            }    
-            int restoDivisao = numeroA;
-        
-            while(restoDivisao - numeroB >= 0){
-            System.out.println("["+restoDivisao+"]" + " - " + 
-                    "[" + numeroB + "]" + " = " + (restoDivisao -=numeroB));
-            }
-            System.out.println("\nO quociente da divisão é igual a: " + numeroA / numeroB);
-            System.out.println("O resto da divisão é: " + restoDivisao); 
+
+            System.out.println("O quociente da divisão é: " + quociente);
+            System.out.println("O resto da divisão é: " + dividendo);
         }
+	
 
         if (opcao == 5) {
-            
+            System.out.print("Opção MULTIPLICAÇÃO DE UM NÚMERO POR OUTRO selecionada! ");
+            Scanner entrance = new Scanner(System.in);
+            int num1, num2, result = 0;
+
+            System.out.print("\nDigite um número: ");
+            num1 = entrance.nextInt();
+            System.out.print("Por qual número você gostaria de multiplicar o número " + num1 + "?");
+            num2 = entrance.nextInt();
+
+            for (int count = 0; count < num2; count++) {
+                result += num1;
+            }
+            System.out.println(num1 + " x " + num2 + " = " + result);
         }
         if (opcao == 6) {
             System.out.print("Até Logo!");
